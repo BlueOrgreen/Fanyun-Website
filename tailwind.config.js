@@ -2,7 +2,7 @@
 // const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-    prefix: 'tw-',
+    // prefix: 'tw-',
     darkMode: 'class',
     content: ['./config/**/*.js', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
@@ -58,5 +58,5 @@ module.exports = {
         },
     },
     // 自定义样式请通过 src/styles/tailwind中的样式实现,不建议通过插件添加
-    plugins: [require('@tailwindcss/line-clamp')],
+    // plugins: [require('@tailwindcss/line-clamp')],
 };

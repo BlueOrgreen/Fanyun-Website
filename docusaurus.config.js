@@ -1,3 +1,5 @@
+const path = require('path')
+
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
@@ -31,32 +33,6 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
-  presets: [
-    [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      }),
-    ],
-  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -134,6 +110,54 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+
+    presets: [
+      [
+        '@docusaurus/preset-classic',
+        /** @type {import('@docusaurus/preset-classic').Options} */
+        ({
+          docs: {
+            path: 'docs',
+            sidebarPath: 'sidebars.js',
+          },
+          blog: false,
+          theme: {
+            customCss: [require.resolve('./src/css/custom.css')],
+          },
+          // sitemap: {
+          //   changefreq: 'daily',
+          //   priority: 0.5,
+          // },
+          // gtag: {
+          //   trackingID: "G-S4SD5NXWXF",
+          //   anonymizeIP: true,
+          // },
+          // // debug: true,
+        }),
+      ],
+    ],
+    plugins: [
+      [
+        path.resolve(__dirname, './src/plugin/plugin-content-blog'), {
+          path: 'blog',
+          routeBasePath: '/',
+          editUrl: ({ locale, blogDirPath, blogPath, permalink }) =>
+            `https://github.com/kuizuo/blog/edit/main/${blogDirPath}/${blogPath}`,
+          editLocalizedFiles: false,
+          blogSidebarCount: 10,
+          blogDescription: '愧怍的个人博客',
+          postsPerPage: 10,
+          showReadingTime: true,
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
+          feedOptions: {
+            type: 'all',
+            title: '愧怍',
+            copyright: `备案`,
+          },
+        }
+      ],
+    ]
 };
 
 module.exports = config;
