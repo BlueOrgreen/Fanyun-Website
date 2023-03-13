@@ -1,6 +1,0 @@
-.main {
-  /* dark:bg-[url(/back/page-links-bg-2.png)] bg-[url(/back/page-links-bg-1.png)] */
-  /* @apply tw-min-h-screen tw-bg-[url(/back/page-link-bg-1.png)]; */
-  /* "min-h-screen bg-[url(/back/page-link-bg-1.png)]" */
-  min-height: 100vh;
-}

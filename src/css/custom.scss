@@ -1,0 +1,173 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities'; */
+// @import 'tailwindcss/base';
+// @import 'tailwindcss/components';
+// @import 'tailwindcss/utilities';
+@import url('./google-fonts.css');
+@import url('./font.css');
+
+
+/* You can override the default Infima variables here. */
+:root {
+  --hue-color: 250;
+
+  --title-color: hsl(var(--hue-color), 8%, 15%);
+  --text-color: hsl(var(--hue-color), 8%, 45%);
+  --ifm-color-primary: hsl(var(--hue-color), 69%, 61%);
+  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --first-color: hsl(var(--hue-color), 69%, 61%);
+  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+
+  --ifm-link-color: hsl(var(--hue-color), 69%, 61%);
+  --ifm-color-light-primary: #12affa;
+  --ifm-color-primary-dark: #05a1ec;
+  --ifm-color-primary-darker: #0598df;
+  --ifm-color-primary-darkest: #047eb8;
+  --ifm-color-primary-light: hsl(var(--hue-color), 69%, 61%);
+  --ifm-color-primary-lighter: #b0e6ff;
+  --ifm-color-primary-lightest: #d5f1fd;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --ifm-navbar-background-color: var(--body-color);
+  --ifm-footer-background-color: rgb(245, 208, 201);
+
+  --ifm-navbar-link-color:  var(--title-color);
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Font size ==========*/
+  --small-font-size: .813rem;
+  --h1-font-size: 1.5rem;
+}
+/* 245 208 201 */
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+
+  --title-color: hsl(var(--hue-color), 8%, 95%);
+
+  --body-color: hsl(var(--hue-color), 28%, 12%);
+
+  --ifm-color-primary: hsl(var(--hue-color), 28%, 12%);;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --ifm-navbar-background-color: var(--body-color);
+  --ifm-footer-background-color: rgb(41, 49, 61);
+
+  --big-font-size: 2rem;
+}
+
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/*==================== BUTTONS ====================*/
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #FFFF;
+  padding: 1rem 1.5rem;
+  border-radius: .5rem;
+  font-weight: var(--font-medium);
+
+}
+
+.button:hover {
+  background-color: var(--first-color-alt);
+}
+
+
+.button--flex {
+  display: inline-flex;
+  align-items: center;
+  transition: .3s;
+
+}
+
+.button__icon {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  transition: .3s;
+}
+
+.pagination-nav {
+  margin: 2em 0;
+}
+
+.row {
+  display: flex;
+  padding: 0 3rem;
+}
+
+.bloghome__posts {
+
+}
+
+.bloghome__posts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  gap: 2rem;
+  animation: fading 0.8s;
+}
+
+
+
+.pagination-nav__link {
+  background: linear-gradient(
+    90deg,
+    var(--ifm-color-primary-light) 11.3%,
+    var(--ifm-color-primary-light) 161.54%
+  );
+  color: white;
+  border: none;
+}
+
+.pagination-nav__link .pagination-nav__sublabel {
+  color: white;
+}
+
+.post__list-item {
+  display: grid;
+
+}
+
+@keyframes fading {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Font size for large devices */
+@media (min-width: 968px) {
+  :root {
+      --big-font-size: 3rem;
+      --h1-font-size: 2.25rem;
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
+  }
+}

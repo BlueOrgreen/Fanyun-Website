@@ -1,6 +1,149 @@
 .hero {
+  /* font-family: 'Xiao Wei'; */
   min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: var(--body-color);
   /* transition: all 0.1s; */
+}
+
+.main {
+  padding: 0 1rem;
+  
+}
+
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.container {
+  max-width: 768px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.homeContainer {
+  font-family: 'Xiao Wei';
+  gap: 1rem;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  row-gap: 5rem
+}
+
+
+.homeContent{
+  grid-template-columns: .5fr 3fr;
+  /* padding-top: -2.5rem; */
+  align-items: center;
+}
+
+.homeSocial {
+  display: grid;
+  grid-template-columns: max-content;
+  row-gap: 1rem;
+  /* transform: translateX(-6rem); */
+}
+
+.homeSocialIcon {
+  font-size: 1.25rem;
+  color: var(--first-color);
+  width: 1.5rem;
+}
+
+.homeImg {
+  order: 2;
+  justify-self: center;
+}
+
+.homeTitle {
+  font-family: 'Xiao Wei';
+  font-size: var(--big-font-size);
+}
+.homeSubtitle {
+  font-family: 'Xiao Wei';
+  font-size: var(--h3-font-size);
+  margin-bottom: 1.5rem;
+}
+
+
+.homeDescription {
+  margin-bottom: 2rem;
+}
+
+.contact {
+  display: flex;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.homeScroll {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  vertical-align: top;
+  left: 3rem;
+  transition: 0.4s;
+}
+
+.homeScroll:hover {
+  bottom: -0.5rem;
+} 
+
+.homeScrollMouse {
+  margin-right: 1rem;
+  font-size: 2rem;
+}
+
+.homeScrollName {
+  /* color: rgba(0, 0, 0, 0.8); */
+  margin-right: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.homeScrollArrow {
+  font-size: 1rem;
+}
+
+/* Font size for large devices */
+@media (min-width: 968px) {
+  :root {
+      --big-font-size: 3rem;
+      --h1-font-size: 2.25rem;
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* .homeSocial {
+    transform: translateX(-6rem);
+  } */
+}
+
+@media (max-width: 800px) {
+  .main {
+    padding: 0;
+  }
+  .section {
+    padding: 6rem 0 2rem;
+  }
+}
+
+@media (min-width: 568px) {
+  .homeContent {
+    grid-template-columns: max-content 1fr 1fr;
+  }
+  .homeData {
+    grid-column: initial;
+  }
+  .homeImg {
+      order: 1;
+      justify-self: center;
+  }
 }

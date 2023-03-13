@@ -38,13 +38,14 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/logo.png',
       navbar: {
         title: 'Fan Yun 站点',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
+        hideOnScroll: true,
         items: [
           {
             type: 'doc',
@@ -122,11 +123,11 @@ const config = {
           },
           blog: false,
           theme: {
-            customCss: [require.resolve('./src/css/custom.css')],
+            customCss: [require.resolve('./src/css/custom.scss')],
           },
           // sitemap: {
           //   changefreq: 'daily',
-          //   priority: 0.5,
+          //   priority: 0.5,ß
           // },
           // gtag: {
           //   trackingID: "G-S4SD5NXWXF",
@@ -137,6 +138,7 @@ const config = {
       ],
     ],
     plugins: [
+      'docusaurus-plugin-sass',
       [
         path.resolve(__dirname, './src/plugin/plugin-content-blog'), {
           path: 'blog',
@@ -145,14 +147,14 @@ const config = {
             `https://github.com/kuizuo/blog/edit/main/${blogDirPath}/${blogPath}`,
           editLocalizedFiles: false,
           blogSidebarCount: 10,
-          blogDescription: '愧怍的个人博客',
+          blogDescription: '帆云的个人博客',
           postsPerPage: 10,
           showReadingTime: true,
           readingTime: ({ content, frontMatter, defaultReadingTime }) =>
             defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
           feedOptions: {
             type: 'all',
-            title: '愧怍',
+            title: '帆云',
             copyright: `备案`,
           },
         }
